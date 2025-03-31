@@ -1,3 +1,35 @@
+# 项目描述
+
+本项目是一个基于 Ant Design Pro + Flask 开发的Web系统，主要实现如下功能：
+
+- 1）基本的注册登录功能
+- 2）三种权限，不同权限访问不同页面
+- 3）用户管理界面，管理员可以访问该界面进行用户的增删改查
+- 4）分页查询、下载功能
+- 5）token动态验证鉴权
+
+因为网上并没有比较全面的Ant Design Pro教程，笔者主要基于[Ant Design Pro 官方文档](https://pro.ant.design/zh-CN/docs/overview) 和 [Ant Design Pro 从零到一教程](https://blog.csdn.net/qq_40432886/article/details/117294378) 学习，结合chatgpt进行快速开发。开发过程中，学习和解决问题的全过程记录在我的个人博客[『web前端开发』基于Ant Design的前端快速开发](https://isoda.top/posts/f69d.html)。
+
+
+
+# 项目部分功能页面展示
+
+登录：
+
+![image-20240725170206028](https://isodatop.oss-cn-beijing.aliyuncs.com/img/image-20240725170206028.png)
+
+用户管理界面：包括用户的增删改查功能
+
+![image-20240801171000518](https://isodatop.oss-cn-beijing.aliyuncs.com/img/image-20240801171000518.png)
+
+弹窗修改和新增用户
+
+![image-20240801171031979](https://isodatop.oss-cn-beijing.aliyuncs.com/img/image-20240801171031979.png)
+
+
+
+
+
 # 前端部署
 
 使用nginx作为web服务器进行部署
@@ -122,10 +154,10 @@ root /usr/share/nginx/html;
 listen 8000 default_server;     listen [::]:8000 default_server;
 
 # 指定前端部署服务器名称
-server_name 192.168.32.190;
+server_name 192.168.xx.xx;
     
 # 指定将/api开头的请求转发给哪个后端服务器。
-proxy_pass http://192.168.32.123:5000;
+proxy_pass http://192.168.xx.xx:5000;
 ```
 
 在保存修改后的配置文件后，运行以下命令测试Nginx配置：
@@ -147,7 +179,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 sudo systemctl restart nginx
 ```
 
-直接访问192.168.32.190:8000即可
+直接访问192.168.xx.xx:8000即可
 
 
 
